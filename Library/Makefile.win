@@ -1,0 +1,64 @@
+# Project: LibraryManagementSystem
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = src/Admin.o src/Book.o src/Fine.o src/Issue.o src/Library.o src/Login.o src/Report.o src/Student.o src/Utility.o main.o src/BookManager.o src/StudentManager.o src/IssueManager.o
+LINKOBJ  = src/Admin.o src/Book.o src/Fine.o src/Issue.o src/Library.o src/Login.o src/Report.o src/Student.o src/Utility.o main.o src/BookManager.o src/StudentManager.o src/IssueManager.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = LibraryManagementSystem.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+src/Admin.o: src/Admin.cpp
+	$(CPP) -c src/Admin.cpp -o src/Admin.o $(CXXFLAGS)
+
+src/Book.o: src/Book.cpp
+	$(CPP) -c src/Book.cpp -o src/Book.o $(CXXFLAGS)
+
+src/Fine.o: src/Fine.cpp
+	$(CPP) -c src/Fine.cpp -o src/Fine.o $(CXXFLAGS)
+
+src/Issue.o: src/Issue.cpp
+	$(CPP) -c src/Issue.cpp -o src/Issue.o $(CXXFLAGS)
+
+src/Library.o: src/Library.cpp
+	$(CPP) -c src/Library.cpp -o src/Library.o $(CXXFLAGS)
+
+src/Login.o: src/Login.cpp
+	$(CPP) -c src/Login.cpp -o src/Login.o $(CXXFLAGS)
+
+src/Report.o: src/Report.cpp
+	$(CPP) -c src/Report.cpp -o src/Report.o $(CXXFLAGS)
+
+src/Student.o: src/Student.cpp
+	$(CPP) -c src/Student.cpp -o src/Student.o $(CXXFLAGS)
+
+src/Utility.o: src/Utility.cpp
+	$(CPP) -c src/Utility.cpp -o src/Utility.o $(CXXFLAGS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+src/BookManager.o: src/BookManager.cpp
+	$(CPP) -c src/BookManager.cpp -o src/BookManager.o $(CXXFLAGS)
+
+src/StudentManager.o: src/StudentManager.cpp
+	$(CPP) -c src/StudentManager.cpp -o src/StudentManager.o $(CXXFLAGS)
+
+src/IssueManager.o: src/IssueManager.cpp
+	$(CPP) -c src/IssueManager.cpp -o src/IssueManager.o $(CXXFLAGS)
